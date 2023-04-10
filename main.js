@@ -37,7 +37,8 @@ searchInputs.forEach(function(searchInput) {
     });
 
     // get value of search input and lower case it
-    var searchText = searchInput.value.toLowerCase();
+    var searchText = searchInput.value.trim().toLowerCase();
+
 
     // get all books
     var books = document.querySelectorAll(".book");
@@ -45,7 +46,7 @@ searchInputs.forEach(function(searchInput) {
     // create array of book objects with title and match count
     var bookObjects = [];
     for (var i = 0; i < books.length; i++) {
-      var bookTitle = books[i].querySelector(".book-card__title").textContent.toLowerCase();
+      var bookTitle = books[i].querySelector(".book-card__title").textContent.trim().toLowerCase();
       if (bookTitle.indexOf(searchText) > -1) {
         books[i].style.display = "inline-block";
       } else {
@@ -110,37 +111,110 @@ document.querySelector('button.input__button__shadow').addEventListener('click',
 
 // popup
 const books = document.querySelectorAll('.book');
+const downloadLink = document.querySelector('#book-popup .fa-download');
+const readButton = document.getElementById('btn-read');
 
 books.forEach(book => {
-  book.addEventListener('click', () => {
+book.addEventListener('click', () => {
 
-    // get information about the clicked book
-    const title = book.querySelector('.book-card__title').textContent;
-    const description = book.querySelector('.book-card__author').textContent;
-    const imageSrc = book.querySelector('.book-cover').style.backgroundImage.replace(/url\(['"](.*)['"]\)/, '$1');
+// get information about the clicked book
+const title = book.querySelector('.book-card__title').textContent;
+const description = book.querySelector('.book-card__author').textContent;
+const imageSrc = book.querySelector('.book-cover').style.backgroundImage.replace(/url\(['"](.*)['"]\)/, '$1');
 
-    // update the popup with book information
-    const bookPopup = document.getElementById('book-popup');
-    const bookTitle = bookPopup.querySelector('#book-title');
-    const bookDescription = bookPopup.querySelector('#book-description');
-    const bookImage = bookPopup.querySelector('#book-image');
+// get the download path and read path from the data-download and data-read attributes
+const downloadPath = book.dataset.download;
+const readPath = book.dataset.read;
 
-    bookTitle.textContent = title;
-    bookDescription.textContent = description;
-    bookImage.src = imageSrc;
+// update the popup with book information
+const bookPopup = document.getElementById('book-popup');
+const bookTitle = bookPopup.querySelector('#book-title');
+const bookDescription = bookPopup.querySelector('#book-description');
+const bookImage = bookPopup.querySelector('#book-image');
 
-    // show the popup
-    bookPopup.style.display = 'block';
-    });
-    });
+bookTitle.textContent = title;
+bookDescription.textContent = description;
+bookImage.src = imageSrc;
 
-    function closePopup() {
-      const bookPopup = document.getElementById('book-popup');
-      bookPopup.style.display = 'none';
-    }
-    
+// update the download link with the correct path and add the 'download' attribute
+downloadLink.href = downloadPath;
+downloadLink.setAttribute('download', '');
+
+// show the popup
+bookPopup.style.display = 'block';
+
+// handle click event on read button
+readButton.addEventListener('click', () => {
+  window.open(readPath, '_blank');
+});
+});
+});
+
+function closePopup() {
+const bookPopup = document.getElementById('book-popup');
+bookPopup.style.display = 'none';
+}
+
+const downloadButton = document.getElementById('btn-download');
+downloadButton.addEventListener('click', downloadFile);
+
+function downloadFile() {
+const downloadPath = downloadLink.href;
+fetch(downloadPath)
+.then(response => response.blob())
+.then(blob => {
+const url = window.URL.createObjectURL(new Blob([blob]));
+const link = document.createElement('a');
+link.href = url;
+link.setAttribute('download', 'file.pdf');
+document.body.appendChild(link);
+link.click();
+link.parentNode.removeChild(link);
+});
+}
 
 
+
+const shareButton = document.getElementById('btn-share');
+const shareTitle = document.getElementById('share-title');
+const shareDescription = document.getElementById('share-description');
+const shareLink = document.getElementById('share-link');
+const copyButton = document.getElementById('btn-copy');
+
+shareButton.addEventListener('click', () => {
+  const title = 'شارك هذا الكتاب';
+  const description = 'انسخ الرابط أدناه وشاركه مع أصدقائك:';
+  const link = 'https://example.com/book123';
+
+  shareTitle.textContent = title;
+  shareDescription.textContent = description;
+  shareLink.value = link;
+
+  showSharePopup();
+});
+
+copyButton.addEventListener('click', () => {
+  shareLink.select();
+  navigator.clipboard.writeText(shareLink.value);
+  copyButton.textContent = 'تم النسخ!';
+});
+
+function showSharePopup() {
+  const sharePopup = document.getElementById('share-popup');
+  sharePopup.style.display = 'block';
+}
+
+function closeSharePopup() {
+  const sharePopup = document.getElementById('share-popup');
+  sharePopup.style.display = 'none';
+  copyButton.textContent = 'نسخ الرابط';
+}
+
+
+
+
+
+      
 
     // ui
     var messageBox = document.querySelector('.js-message');
