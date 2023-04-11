@@ -175,40 +175,6 @@ link.parentNode.removeChild(link);
 
 
 
-const shareButton = document.getElementById('btn-share');
-const shareTitle = document.getElementById('share-title');
-const shareDescription = document.getElementById('share-description');
-const shareLink = document.getElementById('share-link');
-const copyButton = document.getElementById('btn-copy');
-
-shareButton.addEventListener('click', () => {
-  const title = 'شارك هذا الكتاب';
-  const description = 'انسخ الرابط أدناه وشاركه مع أصدقائك:';
-  const link = 'https://example.com/book123';
-
-  shareTitle.textContent = title;
-  shareDescription.textContent = description;
-  shareLink.value = link;
-
-  showSharePopup();
-});
-
-copyButton.addEventListener('click', () => {
-  shareLink.select();
-  navigator.clipboard.writeText(shareLink.value);
-  copyButton.textContent = 'تم النسخ!';
-});
-
-function showSharePopup() {
-  const sharePopup = document.getElementById('share-popup');
-  sharePopup.style.display = 'block';
-}
-
-function closeSharePopup() {
-  const sharePopup = document.getElementById('share-popup');
-  sharePopup.style.display = 'none';
-  copyButton.textContent = 'نسخ الرابط';
-}
 
 
 
