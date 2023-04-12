@@ -10,24 +10,26 @@
   <link rel="stylesheet" href="css/all.min.css" />
 <!-- other style -->
 <link rel="stylesheet" href="style.css">
-
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body>
+<body id="body" >
   <nav id="navbar" class="navbar navbar-expand-lg bg-dark sticky-top">
-    <div class="container-fluid"> <a class="navbar-brand" href="#"> <i class="fa-brands fa-pied-piper"></i> MarketMaven
+    <div class="container-fluid"> <a class="navbar-brand fs-3" href="#"> <i class="fa-brands fa-pied-piper"></i> المؤلف الذهبي
       </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span
           class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Home</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">services</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">about</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Connect us</a> </li>
-        </ul>   <label class="switch">
-          <input type="checkbox" class="input__check">
+      <div class="collapse k navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-5 ">
+          <li class="nav-item"> <a class="nav-link active fs-5" aria-current="page" href="#">الرئيسيه</a> </li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="#">عالم الكتب</a> </li>
+          <li class="nav-item"> <a class="nav-link fs-5" href="#">المؤلف</a> </li>
+        </ul>  
+        <label class="switch">
+          <input type="checkbox" id="checkbox" class="input__check">
           <span class="slider"></span>
         </label>
+        
       </div>
     </div>
   </nav>
@@ -43,16 +45,16 @@
     </video>
 
     <div class="content">
-        <h1>Explore More</h1>
-        <div class="input__container search-container">
+        <h1 class="tx-s">اهلا بك في عالم المؤلف الذهبي ابانوب فلنبدا المغامره</h1>
+        <!-- <div class="input__container search-container">
           <div class="shadow__input"></div>
           <button type="submit" class="input__button__shadow">
             <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" height="20px" width="20px">
               <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fill-rule="evenodd" fill="#17202A"></path>
             </svg>
           </button>
-          <input type="text" name="search" class="input__search" placeholder="What do you want to search?">
-        </div>
+          <input type="text" name="search" class="input__search" placeholder="عن ماذا تريد ان تبحث?">
+        </div> -->
     </div>
     <div class="icon-scroll-bloc">
 			<a href="#section-3" onclick="scrollToSection()" class="icon-scroll"><span>				</span></a>
@@ -63,7 +65,7 @@
 <!-- slinder  -->
 
 
-<h1 class="fn col-12" href="#">Acient Egypt</h1>
+<h1 class="fn col-12" href="#">مملكة الكتب</h1>
 
 
 
@@ -74,7 +76,7 @@
       <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fill-rule="evenodd" fill="#17202A"></path>
     </svg>
   </button>
-  <input type="text" name="search" class="input__search" placeholder="What do you want to search?">
+  <input style="direction: rtl;" type="text" name="search" class="input__search" placeholder="عن ماذا تريد ان تبحث?">
 </div>
 
 
@@ -82,24 +84,24 @@
 <div class="container main">
   <div class="row" id="books">
 
-
+    
 
 
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-        <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https://drive.google.com/file/d/1tWjJ7oZViN6ex7vXD_eMnVxcUgTc9iKN/view?usp=sharing">
+        <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"    download="2056"  data-read="https://drive.google.com/file/d/1tWjJ7oZViN6ex7vXD_eMnVxcUgTc9iKN/view?usp=sharing" >
         <div class="book-cover cover3" style="background-image: url('cover/lahnabibo.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
-        <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">لعنة بيبو</h2>
+        <div  class="book-inside" data-book="harry-potter">
+          <h2 class="book-card__title cl">لعنة بيبو</h2>
           <p class="book-card__author">"القبور كانت خمسة واسمائهم محفوره عليهم ومحدش يقدر يقرب منهم وهو في النص"
             خمسة قبور في شكل النجمة الشيطانية وفي الوسط يقف بيبو باصص للسماء السوداء ،أصدقاء بيبو الخمسة، المرايا بوابة العالم"
             "السفلي</p>
         </div>
-        <h4 style="margin-top: 25px;">لعنة بيبو</h4>
+        <h4 class="cl" class="cl" style="margin-top: 25px;"  >لعنة بيبو</h4>
       </div>
     </div>
 
@@ -109,27 +111,7 @@
     
 
 
-    <div id="book-popup" style="display:none;">
-      <div class="book-info">
-      <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
-      <div class="row">
-      <div class="col-md-5">
-      <img id="book-image" src="" alt="">
-      </div>
-      <div class="col-md-7">
-      <h2 id="book-title"></h2>
-      <p id="book-description"></p>
-      </div>
-      </div>
-      <div class="book-buttons">
-      <button><i class="far fa-share-square"></i></button>
-      <button id="btn-download"><i class="fas fa-download"></i></button>
-      <button id="btn-read"><i class="fas fa-book-open"></i></button>
-      </div>
-      </div>
-      </div>
-      
-      
+
 
 
 
@@ -137,19 +119,18 @@
 
 
       <div class="col-md-4 col-sm-6 col-lg-3">
-        <div class="book" data-download="pdf/The novel of the beginning of the greatest ages-1.pdf" data-read="https://drive.google.com/file/d/1COMhmNyy5F1i8garGQRu6l-aDmHBB5RS/view?usp=sharing">
+        <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1COMhmNyy5F1i8garGQRu6l-aDmHBB5RS/view?usp=sharing">
 
   <div class="book-cover cover3" style="background-image: url('cover/hsoor.jpg')">
     <div class="effect"></div>
     <div class="light"></div>
   </div>
   <div class="book-inside" data-book="harry-potter">
-    <h2 class="book-card__title">بداية اعظم العصور</h2>
+    <h2 class="book-card__title cl">بداية اعظم العصور</h2>
     <p class="book-card__author">تجلس امرأة عجوزة في شارع يسودة الظالم وهدوء تام مع عاصفة وأمطار غزيرة،تشعر المراة العجوز بالبرودة لمالبسها الخفيفة
-      والممزقة من نواحي مختلفة،وفاجاة تمر سيارة وتقف إمامها ثم ينزل منها شخص ثري جدا وتبين ذلك من نوع السيارة والمالبس
-      الفاخرة ويضع شمسية فوقه لحمايته من المطر الغزير،ثم يقوم بتشغيل كاميرا هاتفه ويبدأ بالحديث الي الجمهور</p>
+      والممزقة من نواحي مختلفة،</p>
   </div>
-  <h4 style="margin-top: 25px;">بداية اعظم العصور</h4>
+  <h4 class="cl" style="margin-top: 25px;" >بداية اعظم العصور</h4>
 </div>
 </div>
 
@@ -165,18 +146,18 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/Short story-1.pdf" data-read="https://drive.google.com/file/d/1hQAjFmumcDT0w63g4y_HltHcK_ViG1m8/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1hQAjFmumcDT0w63g4y_HltHcK_ViG1m8/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/hlack.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">مكتئب في الطريق للهلاك</h2>
+          <h2 class="book-card__title cl">مكتئب في الطريق للهلاك</h2>
           <p class="book-card__author">مقدمة:اتعرف صديقي القارئ العزيز قبل أن يتمّ اكتشاف الفيزياء، وسائر العلوم كان الألم يفتت المادة ، وكان الإحباط يكسر الروح..
             دعني اخذك في جولة قصيرة من وحي خيالي المتواضع لتفهم ماذا اقصد وما وراء قصتي…</p>
         </div>
-        <h4 style="margin-top: 25px;">مكتئب في الطريق للهلاك</h4>
+        <h4 class="cl" style="margin-top: 25px;" >مكتئب في الطريق للهلاك</h4>
       </div>
     </div>
 
@@ -184,38 +165,38 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-      <div class="book" data-download="pdf/Novel - The Real Life Seeker -.pdf" data-read="https://drive.google.com/file/d/1NmNpWsUTVqlgecQFLh2MfVA7MOZhQz88/view?usp=sharing">
+      <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1NmNpWsUTVqlgecQFLh2MfVA7MOZhQz88/view?usp=sharing">
 
 <div class="book-cover cover3" style="background-image: url('cover/v1.jpg')">
   <div class="effect"></div>
   <div class="light"></div>
 </div>
 <div class="book-inside" data-book="fath-potter">
-  <h2 class="book-card__title">لباحث عن الحياة الحقيقية</h2>
+  <h2 class="book-card__title cl">لباحث عن الحياة الحقيقية</h2>
   <p class="book-card__author">"الفصل االول"العالم االول
     ..........................
     " تأليف ومن وحي خيال المؤلف" الكاتب ابانوب ماجد
     مقدمة: دعني اقول لك شئ صغير اذا كنت تعتقد ان هذه الحياة هيا الحياة الحقيقة وانك تخاف علي حياتك فال تكمل واخرج علي
     الفور،اما اذا كنت تؤمن بوجود حياة اخره حياة حقيقة فياا مرحبا بك في رحلتي ايها الرحال العظيم</p>
 </div>
-<h4 style="margin-top: 25px;">لباحث عن الحياة الحقيقية</h4>
+<h4 class="cl" style="margin-top: 25px;" >لباحث عن الحياة الحقيقية</h4>
 </div>
 </div>
 
 
 <div class="col-md-4 col-sm-6 col-lg-3">
-  <div class="book" data-download="pdf/Novel - The Real Life Finder - 2.pdf" data-read="https://drive.google.com/file/d/1cbeUZFUKvRaBIbkJIt6WXGTV7MpjgbB3/view?usp=sharing">
+  <div class="book"  data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1cbeUZFUKvRaBIbkJIt6WXGTV7MpjgbB3/view?usp=sharing">
 
 <div class="book-cover cover3" style="background-image: url('cover/v2.jpg')">
 <div class="effect"></div>
 <div class="light"></div>
 </div>
 <div class="book-inside" data-book="fath-potter">
-<h2 class="book-card__title">الالفا ستروك</h2>
+<h2 class="book-card__title cl">الالفا ستروك</h2>
 <p class="book-card__author">امام هذه القلعة العمالقة واقف..ال أستطيع أن اري شئ غيرها..الضباب يحاوطني..يحجب عني الرؤية..ماذا أفعل االن ليس أمامي اال
   خيار واحد</p>
 </div>
-<h4 style="margin-top: 25px;">الالفا ستروك</h4>
+<h4 class="cl" style="margin-top: 25px;" >الالفا ستروك</h4>
 </div>
 </div>
 
@@ -224,37 +205,37 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/story -world and vice versa-.pdf" data-read="https://drive.google.com/file/d/1A_HUD5f3p_rHFVRgLI_J0pygDE4t3Fie/view?usp=sharing">
+              <div class="book"  data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1A_HUD5f3p_rHFVRgLI_J0pygDE4t3Fie/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/5.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">عالم والعكس صحيح </h2>
+          <h2 class="book-card__title cl">عالم والعكس صحيح </h2>
           <p class="book-card__author">*مريض غرفة رقم ٥*
 
             "علي كل باب غرفة مكتوب عبارة ولكن اين الخامسة"
             دعنا نرجع للماضي لنعرف ما هيا الحكايا.</p>
         </div>
-        <h4 style="margin-top: 25px;">عالم والعكس صحيح </h4>
+        <h4 class="cl" style="margin-top: 25px;" >عالم والعكس صحيح </h4>
       </div>
     </div>
 
 <!-- v -->
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1yNzMQf7Od-vWpzFjOW5zsC767Cv1UGPl/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/nzrt.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">Harry Potter e a Pedra Filosofal</h2>
-          <p class="book-card__author">J. K. Rowling</p>
+          <h2 class="book-card__title cl">نظرت خلفي</h2>
+          <p class="book-card__author">✨انت يا من ال تبالي بما أمامك من كلماتي اتظن انك ناجي انا أقدم لك الحياة فإذا تجاهلتها فيااا رباااه بما سيحدث لك✨</p>
         </div>
-        <h4 style="margin-top: 25px;">book hary boooter </h4>
+        <h4 class="cl" style="margin-top: 25px;" >نظرت خلفي</h4>
       </div>
     </div>
 <!-- v -->
@@ -264,33 +245,33 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/Series-A Session with Uncle Flaveloa- {1}.pdf" data-read="https://drive.google.com/file/d/1YeiEeL8VQcLI6CjWr2bvqXg_qhEHcIWz/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1YeiEeL8VQcLI6CjWr2bvqXg_qhEHcIWz/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/hmflafilo.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">جلسة مع عم فالفيلوا</h2>
+          <h2 class="book-card__title cl">جلسة مع عم فالفيلوا</h2>
           <p class="book-card__author">"األفكار السلبية انك تقعد تفكر في شئ ولكنك مبتخدش اي اجراء لتنفيذه"
             (عم فالفيلوا جالس أمام باب العمارة كعادته وهو في غاية السعادة والهدوء)
             (سعيد في طريقة لدخول باب عمارته وهو في غاية الحزن وبسبب عدم تركيزه ال ينتبه لحجر تحت قدمه فيقع علي االرض)......</p>
         </div>
-        <h4 style="margin-top: 25px;">جلسة مع عم فالفيلوا</h4>
+        <h4 class="cl" style="margin-top: 25px;" >جلسة مع عم فالفيلوا</h4>
       </div>
     </div>
 
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/Thoughts of the writerAbanoub Majid Shafiq-1.pdf" data-read="https://drive.google.com/file/d/1Bn9Rc0KiK1uRqP4PSy8vecnDFAqZ4nNV/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1Bn9Rc0KiK1uRqP4PSy8vecnDFAqZ4nNV/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/nfse.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">إهداء الي نفسي</h2>
+          <h2 class="book-card__title cl">إهداء الي نفسي</h2>
           <p class="book-card__author">خاطرة للكاتب"ابانوب ماجد شفيق
             .......................................
             نفسي..نفسي
@@ -301,26 +282,26 @@
             ................
             (تأليف ومن وحي خيال:ابانوب ماجد شفيق)</p>
         </div>
-        <h4 style="margin-top: 25px;">إهداء الي نفسي</h4>
+        <h4 class="cl" style="margin-top: 25px;" >إهداء الي نفسي</h4>
       </div>
     </div>
 
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/Novel - The Real Life Seeker -.pdf" data-read="https://drive.google.com/file/d/1NmNpWsUTVqlgecQFLh2MfVA7MOZhQz88/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1uTiAltv061QUIsTPjkmk8qqvqid4w2WC/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/18.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">عاهرة لقيتوا نفسي</h2>
+          <h2 class="book-card__title cl">عاهرة لقيتوا نفسي</h2>
           <p class="book-card__author">مقدمة:اذا كان الجسد العاري دليل الحضارة..فهنيئا للحيوانات فإن لهم كل الحضارة دعنا نذهب في رحلة صغيرة ثانية من وحي خيالي
 
             ..لعلها توضح لنا الواقع وتفسره وتظهر ما ورائه من خفايا</p>
         </div>
-        <h4 style="margin-top: 25px;">عاهرة لقيتوا نفسي</h4>
+        <h4 class="cl" style="margin-top: 25px;" >عاهرة لقيتوا نفسي</h4>
       </div>
     </div>
 
@@ -330,17 +311,17 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/story-tree suicide-.pdf" data-read="https://drive.google.com/file/d/10xRHcLr1T5KBSwUIptEL5S7AzTfX5X27/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/10xRHcLr1T5KBSwUIptEL5S7AzTfX5X27/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/tree.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">إنتحار شجرة</h2>
+          <h2 class="book-card__title cl">إنتحار شجرة</h2>
           <p class="book-card__author">..مقدمة:قريبا ساقبلك واتي الليك فالحياة من دونك كذبة وال أستطيع تصديقها ولو للحظة</p>
         </div>
-        <h4 style="margin-top: 25px;">إنتحار شجرة </h4>
+        <h4 class="cl" style="margin-top: 25px;" >إنتحار شجرة </h4>
       </div>
     </div>
 
@@ -348,19 +329,19 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/1NUIp8OPh1j80LhvZewF1WcVGGVpxjeFT/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/zlzal.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">ما وراء الزلزال</h2>
+          <h2 class="book-card__title cl">ما وراء الزلزال</h2>
           <p class="book-card__author">مقدمة"ال يمكننا وقف الزالزل ، وال يمكننا منع موجات الجفاف ، وال يمكننا منع كل الصراعات ، ولكن عندما نعرف أين يوجد الجياع
 
             "والمشردون والمرضى ، عندها يمكننا المساعدة</p>
         </div>
-        <h4 style="margin-top: 25px;">ما وراء الزلزال</h4>
+        <h4 class="cl" style="margin-top: 25px;" >ما وراء الزلزال</h4>
       </div>
     </div>
 
@@ -368,18 +349,18 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/Story -Falafiloa in your home-.pdf" data-read="https://drive.google.com/file/d/1aK1ZsADAZuyN6QEvlUhFcxrJ1W0Gmgcg/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"    data-read="https://drive.google.com/file/d/1aK1ZsADAZuyN6QEvlUhFcxrJ1W0Gmgcg/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/rhpflafilo.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">فالفيلوا في بيتك</h2>
+          <h2 class="book-card__title cl">فالفيلوا في بيتك</h2>
           <p class="book-card__author">في الساعة ١٢ بليل وبعد لما ماما خلصت وزارت قبر بابا خدتني من ايدي علشان نمشي من القبور الي كانت حوالينا من كل حتة دي
             والهدوء والظالم المرعب الي كان سايد ومنتشر في المكان عند باب دخول المقابر وقفت ماما وشدتها من اديها..ماما ماما.....</p>
         </div>
-        <h4 style="margin-top: 25px;">فالفيلوا في بيتك</h4>
+        <h4 class="cl" style="margin-top: 25px;" >فالفيلوا في بيتك</h4>
       </div>
     </div>
 
@@ -389,19 +370,17 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"    data-read="https://drive.google.com/file/d/1OJvbNe5_yUnS5TLWJe8i_-CC14aoDSVd/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/nhaia.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">الباحث عن الحياة الحقيقية</h2>
-          <p class="book-card__author">مقدمة: دعني اقول لك شئ صغير اذا كنت تعتقد ان هذه الحياة هيا الحياة الحقيقة وانك تخاف علي حياتك فال تكمل واخرج علي
-            الفور،اما اذا كنت تؤمن بوجود حياة اخره حياة حقيقة فياا مرحبا بك في رحلتي ايها الرحال العظيم وبما انك قد وصلت الي هنا فأنا
-            ارفع لك القبعة وسيكون هذا شرف عظيم انك تنضم وتصبح معي في هذة الرحلة...</p>
+          <h2 class="book-card__title cl">حرب الخسارة</h2>
+          <p class="book-card__author">✨هذه الحرب خاصتا ال تدخلها لانك حتما ستخرج خاسرا ميت في النهاية✨</p>
         </div>
-        <h4 style="margin-top: 25px;">الباحث عن الحياة الحقيقية</h4>
+        <h4 class="cl" style="margin-top: 25px;" >حرب الخسارة</h4>
       </div>
     </div>
 
@@ -409,88 +388,70 @@
 
 
     <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/The story-the execution is alive-.pdf" data-read="https://drive.google.com/file/d/11ArJtiDONixqEV0N_CCR0y6-UhSb9_2v/view?usp=sharing">
+              <div class="book" data-aos="zoom-in-up" data-aos-offset="310" data-aos-duration="1000"  download="2056"   data-read="https://drive.google.com/file/d/11ArJtiDONixqEV0N_CCR0y6-UhSb9_2v/view?usp=sharing">
 
         <div class="book-cover cover3" style="background-image: url('cover/zwag.jpg')">
           <div class="effect"></div>
           <div class="light"></div>
         </div>
         <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">الاعدام حيا</h2>
+          <h2 class="book-card__title cl">الاعدام حيا</h2>
           <p class="book-card__author">مقدمة"ابي قتلني من أجل المال وانا لن اقفز االن حتي لن اقتل طفلي من اجل اللعب"</p>
         </div>
-        <h4 style="margin-top: 25px;">الاعدام حيا </h4>
+        <h4 class="cl" style="margin-top: 25px;" >الاعدام حيا </h4>
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
+  
 
-        <div class="book-cover cover3" style="background-image: url('http://fuel-design.com/media/uploads/publications/Soviet_Space_Dogs_cover.jpg')">
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-        <div class="book-inside" data-book="harry-potter">
-          <h2 class="book-card__title">Harry Potter e a Pedra Filosofal</h2>
-          <p class="book-card__author">J. K. Rowling</p>
-        </div>
-        <h4 style="margin-top: 25px;">book hary boooter </h4>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
-
-        <div class="book-cover cover3" style="background-image: url('http://fuel-design.com/media/uploads/publications/Tattoo_Vol_I_cover.jpg')">
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-        <div class="book-inside" data-book="fath-potter">
-          <h2 class="book-card__title">Fath Potter bv e a Pedra Filosofal</h2>
-          <p class="book-card__author">J. K. Rowling</p>
-        </div>
-        <h4 style="margin-top: 25px;">book hary  boooter </h4>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6 col-lg-3">
-              <div class="book" data-download="pdf/lhna bibo.pdf" data-read="https">
-
-        <div class="book-cover cover3" style="background-image: url('http://fuel-design.com/media/uploads/publications/CRIME_cover.jpg')">
-          <div class="effect"></div>
-          <div class="light"></div>
-        </div>
-        <div class="book-inside" data-book="harry-potter-2">
-          <h2 class="book-card__title">Harry Potter e a Câmara Secreta</h2>
-          <p class="book-card__author">J. K. Rowling</p>
-        </div>
-        <h4 style="margin-top: 25px;">book hary boooter </h4>
-      </div>
-    </div>
   </div>
 </div>
+
+<!-- 
+  
+  http://fuel-design.com/media/uploads/publications/CRIME_cover.jpg
+http://fuel-design.com/media/uploads/publications/Tattoo_Vol_I_cover.jpg
+http://fuel-design.com/media/uploads/publications/Soviet_Space_Dogs_cover.jpg
+-->
+
 
 
 <div id="book-popup" style="display:none;">
   <div class="book-info">
-     <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
-     <div class="row">
-       <div class="col-md-5">
-         <img id="book-image" src="" alt="">
-       </div>
-       <div class="col-md-7">
-         <h2 id="book-title"></h2>
-         <p id="book-description"></p>
-       </div>
-     </div>
-     <div class="book-buttons">
+    <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
+    <div class="row">
+      <div class="col-md-5">
+        <img id="book-image" src="" alt="">
+      </div>
+      <div class="col-md-7">
+        <h2 id="book-title"></h2>
+        <p id="book-description"></p>
+      </div>
+    </div>
+    <div class="d-po">
+      <i class="fa-solid fa-cloud-arrow-down"></i>
+      <h1 id="don"></h1>
       
-        <button><i class="far fa-share-square"></i></button>
-        <button id="btn-download"><i class="fas fa-download"></i></button>
+      <div class="rating">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
 
-        <button><i class="fas fa-book-open"></i></button>
-     </div>
+
+    </div>
+    <div class="book-buttons">
+      <button id="btn-read"><i class="fas fa-book-open"></i> قراءه وتنزيل</button>
+      <button onclick="share()">مشاركة<i class="far fa-share-square"></i></button>
+      <div id="whatsapp-share-button" style="display:none;">
+        <button onclick="copyLink()">Copy Link</button>
+        <span id="copySuccessMessage" style="display:none; color:green;">Copied!</span>
+      </div>
+    </div>
   </div>
 </div>
-
 <div class="c">
 <button id="show-all" class="sbtn" style="display: none;">Show All</button>
 </div>
@@ -500,35 +461,35 @@
 <div class="wrapper">
   <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg" alt="profile card">
+      <img src="IMG-20230411-WA0031.jpg" alt="profile card">
     </div>
 
     <div class="profile-card__cnt js-profile-cnt">
-      <div class="profile-card__name">Muhammed Erdem</div>
-      <div class="profile-card__txt">Front-end Developer from <strong>Mesopotamia</strong></div>
+      <div class="profile-card__name">ابانوب ماجد</div>
+      <div class="profile-card__txt"><strong>مؤلف وكاتب </strong> روايات وقصص قصيرة والمسرحيات بمختلف أنواعها ، الرعب ، الكوميديا ​​، الخيال العلمي ، الدراما ، بأسلوب فريد وشيق ، وسرد ممتع بامكانيات عالية</div>
       <div class="profile-card-loc">
         <span class="profile-card-loc__icon">
           <svg class="icon"><use xlink:href="#icon-location"></use></svg>
         </span>
 
         <span class="profile-card-loc__txt">
-          Istanbul, Turkey
+          مصر , أسيوط
         </span>
       </div>
 
       <div class="profile-card-inf">
         <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">1598</div>
+          <div class="profile-card-inf__title">26598</div>
           <div class="profile-card-inf__txt">Followers</div>
         </div>
 
         <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">65</div>
+          <div class="profile-card-inf__title">23465</div>
           <div class="profile-card-inf__txt">Following</div>
         </div>
 
         <div class="profile-card-inf__item">
-          <div class="profile-card-inf__title">123</div>
+          <div class="profile-card-inf__title">36</div>
           <div class="profile-card-inf__txt">Articles</div>
         </div>
 
@@ -686,7 +647,11 @@
 </footer>
 
 
-
+<script>
+  AOS.init({
+    once: true,
+  });
+</script>
 
   <script src="main.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

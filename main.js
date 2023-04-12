@@ -20,7 +20,6 @@ window.addEventListener("scroll", updateProgressBar);
 
 
 // get input element and button
-
 var searchInputs = document.querySelectorAll(".search-container input[type='text']");
 
 // get Show All button
@@ -39,6 +38,30 @@ searchInputs.forEach(function(searchInput) {
     // get value of search input and lower case it
     var searchText = searchInput.value.trim().toLowerCase();
 
+    // check if search input is not empty
+    if (searchText !== "") {
+      // initialize AOS animations with once: false
+      AOS.init({
+        once: false,
+      });
+
+      // set data-aos-offset to 250
+      var aosElements = document.querySelectorAll("[data-aos-offset='310']");
+      aosElements.forEach(function(element) {
+        element.setAttribute("data-aos-offset", "250");
+      });
+    } else {
+      // initialize AOS animations with once: true
+      AOS.init({
+        once: true,
+      });
+
+      // set data-aos-offset to 310
+      var aosElements = document.querySelectorAll("[data-aos-offset='250']");
+      aosElements.forEach(function(element) {
+        element.setAttribute("data-aos-offset", "310");
+      });
+    }
 
     // get all books
     var books = document.querySelectorAll(".book");
@@ -68,6 +91,7 @@ searchInputs.forEach(function(searchInput) {
       container.appendChild(bookObjects[i].book);
     }
 
+    
     // hide Show All button if there is no search text
     if (searchText === "") {
       showAllButton.style.display = "none";
@@ -80,7 +104,6 @@ searchInputs.forEach(function(searchInput) {
   });
 });
 
-// add event listener to Show All button
 // add event listener to Show All button
 showAllButton.addEventListener("click", function() {
   // get all search inputs and clear their values
@@ -96,7 +119,19 @@ showAllButton.addEventListener("click", function() {
 
   // hide Show All button again
   this.style.display = "none";
+
+  // initialize AOS animations with once: true
+  AOS.init({
+    once: true,
+  });
+
+  // set data-aos-offset to 310
+  var aosElements = document.querySelectorAll("[data-aos-offset='250']");
+  aosElements.forEach(function(element) {
+    element.setAttribute("data-aos-offset", "310");
+  });
 });
+
 
 
 // add event listener to scroll button
@@ -109,71 +144,77 @@ document.querySelector('button.input__button__shadow').addEventListener('click',
 
 
 
-// popup
 const books = document.querySelectorAll('.book');
-const downloadLink = document.querySelector('#book-popup .fa-download');
-const readButton = document.getElementById('btn-read');
+  const readButton = document.getElementById('btn-read');
 
-books.forEach(book => {
-book.addEventListener('click', () => {
+  books.forEach(book => {
+    book.addEventListener('click', () => {
 
-// get information about the clicked book
-const title = book.querySelector('.book-card__title').textContent;
-const description = book.querySelector('.book-card__author').textContent;
-const imageSrc = book.querySelector('.book-cover').style.backgroundImage.replace(/url\(['"](.*)['"]\)/, '$1');
+      // get information about the clicked book
+  
+const cus = book.getAttribute('download'); // الحصول على قيمة الattribute
+      const title = book.querySelector('.book-card__title').textContent;
+      const description = book.querySelector('.book-card__author').textContent;
+      const imageSrc = book.querySelector('.book-cover').style.backgroundImage.replace(/url\(['"](.*)['"]\)/, '$1');
 
-// get the download path and read path from the data-download and data-read attributes
-const downloadPath = book.dataset.download;
-const readPath = book.dataset.read;
+      // get the read path from the data-read attribute
+      const readPath = book.dataset.read;
 
-// update the popup with book information
-const bookPopup = document.getElementById('book-popup');
-const bookTitle = bookPopup.querySelector('#book-title');
-const bookDescription = bookPopup.querySelector('#book-description');
-const bookImage = bookPopup.querySelector('#book-image');
+      // update the popup with book information
 
-bookTitle.textContent = title;
-bookDescription.textContent = description;
-bookImage.src = imageSrc;
-
-// update the download link with the correct path and add the 'download' attribute
-downloadLink.href = downloadPath;
-downloadLink.setAttribute('download', '');
-
-// show the popup
-bookPopup.style.display = 'block';
-
-// handle click event on read button
-readButton.addEventListener('click', () => {
-  window.open(readPath, '_blank');
-});
-});
-});
-
-function closePopup() {
-const bookPopup = document.getElementById('book-popup');
-bookPopup.style.display = 'none';
-}
-
-const downloadButton = document.getElementById('btn-download');
-downloadButton.addEventListener('click', downloadFile);
-
-function downloadFile() {
-const downloadPath = downloadLink.href;
-fetch(downloadPath)
-.then(response => response.blob())
-.then(blob => {
-const url = window.URL.createObjectURL(new Blob([blob]));
-const link = document.createElement('a');
-link.href = url;
-link.setAttribute('download', 'file.pdf');
-document.body.appendChild(link);
-link.click();
-link.parentNode.removeChild(link);
-});
-}
+      const bookPopup = document.getElementById('book-popup');
+      const bookTitle = bookPopup.querySelector('#book-title');
+      const bookDescription = bookPopup.querySelector('#book-description');
+      const bookImage = bookPopup.querySelector('#book-image');
+      const don = bookPopup.querySelector('#don');
+      bookTitle.textContent = title;
+      bookDescription.textContent = description;
+      don.textContent = cus;
+      bookImage.src = imageSrc;
+      
+      // show the popup
+      bookPopup.style.display = 'block';
+    //  roting 
+    
 
 
+
+      // handle click event on read button
+      readButton.addEventListener('click', () => {
+        window.open(readPath, '_blank');
+      });
+    });
+    });
+// Get the rating element
+
+
+
+
+    
+    function closePopup() {
+    const bookPopup = document.getElementById('book-popup');
+    bookPopup.style.display = 'none';
+    }
+    
+    function share() {
+    // اظهار زر مشاركة على واتساب
+    document.getElementById("whatsapp-share-button").style.display = "block";
+    }
+    
+    function copyLink() {
+    // نسخ رابط الصفحة
+    var pageUrl = window.location.href;
+    navigator.clipboard.writeText(pageUrl);
+    
+    //اظهار رسالة تأكيد النسخ
+    var successMessage = document.getElementById("copySuccessMessage");
+    successMessage.style.display = "inline";
+    
+    // إخفاء زر النسخ بعد 5 ثواني
+    setTimeout(function() {
+      successMessage.style.display = "none";
+    }, 5000);
+    }
 
 
 
@@ -200,3 +241,62 @@ link.parentNode.removeChild(link);
           card.classList.remove('active');
       });
   });
+
+
+// dark
+
+
+
+document.getElementById("checkbox").checked = false;
+
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
+});
+
+
+
+
+setInterval(function() {
+  if (Notification.permission === "granted") {
+    var options = {
+      body: " المؤلف الذهبي "
+    }
+    var notification = new Notification("عنوان الإشعار هنا",options);
+  } else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function(permission) {
+      if (permission === "granted") {
+        var options = {
+          body: "  المؤلف الذهبي"
+        }
+        var notification = new Notification("  قام بمشاركه كتاب جديد قم بزياره الموقع",options);
+      }
+    });
+  }
+}, 3600000); // يتم تحديد وقت الجلسات بهذه الطريقة (10000 ميللي ثانية = 10 ثوانٍ)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
